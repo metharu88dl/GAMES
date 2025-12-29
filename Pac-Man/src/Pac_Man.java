@@ -267,9 +267,10 @@ public class Pac_Man extends JPanel implements ActionListener, KeyListener {
             for(Block foo : food){
                 if(collision(pacman,foo)){
                     foodEaten=foo;
-                    score+=10;
+                    score+=10; 
                 }
             }
+            //RCB..
             food.remove(foodEaten);
             if (food.isEmpty()) {
                 loadMap();
