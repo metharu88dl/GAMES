@@ -269,8 +269,7 @@ public class Pac_Man extends JPanel implements ActionListener, KeyListener {
                     foodEaten=foo;
                     score+=10; 
                 }
-            }
-            //RCB..
+            } 
             food.remove(foodEaten);
             if (food.isEmpty()) {
                 loadMap();
@@ -347,5 +346,7 @@ public class Pac_Man extends JPanel implements ActionListener, KeyListener {
             pacman.image=pacmanRightImage;
         }
     }
+    //Approximation
+            int epsilon=5;
 
 }
