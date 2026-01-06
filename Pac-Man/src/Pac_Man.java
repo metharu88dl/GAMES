@@ -348,5 +348,7 @@ public class Pac_Man extends JPanel implements ActionListener, KeyListener {
     }
     //Approximation
             int epsilon=5;
+    //Level-Upgradation
+            int level=1;
 
 }
