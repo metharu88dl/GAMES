@@ -24,3 +24,5 @@ Basically when the pac-man, tries to change direction (opening is present), curr
 
 ----:: LEVEL-Upgradation ::----
 Actually whenever, the pac-man successfully finishes all the foods, he should be given a life extra as BONUS, and procees to level 2.. where difficulty should increase, as well the MAP also,, ghosts speed should increase too..
+
+hi
