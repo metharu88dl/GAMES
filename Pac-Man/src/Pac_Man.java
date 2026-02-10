@@ -91,13 +91,13 @@ public class Pac_Man extends JPanel implements ActionListener, KeyListener {
         "XXXX XXXX XXXX XXXX",
         "OOOX X       X XOOO",
         "XXXX X XXrXX X XXXX",
-        "X       bpo       X",
+        "X       vRp       X",
         "XXXX X XXXXX X XXXX",
         "OOOX X       X XOOO",
         "XXXX X XXXXX X XXXX",
         "X        X        X",
         "X XX XXX X XXX XX X",
-        "X  X     P     X  X",
+        "X  X     D     X  X",
         "XX X X XXXXX X X XX",
         "X    X   X   X    X",
         "X XXXXXX X XXXXXX X",
@@ -106,16 +106,16 @@ public class Pac_Man extends JPanel implements ActionListener, KeyListener {
     };
     
     Image wall;
-    Image blueGhostImage;
+    Image vijayalakshmiImage;
     Image powerFoodImage;
     Image cherryImage;  
-    Image RedGhostImage;
-    Image OrangeGhostImage;
-    Image pinkGhostImage;
-    Image pacmanLeftImage;
-    Image pacmanRightImage;
-    Image pacmanUpImage;
-    Image pacmanDownImage;
+    Image renukaswamyImage;
+    Image pavithragowdaImage;
+    Image RanganathImage;
+    Image DbossRightImage;
+    Image DbossLeftImage;
+    Image DbossUpImage;
+    Image DbossDownImage;
     Image cherry2Image;
     Image scaredGhostImage;
 
@@ -127,15 +127,15 @@ public class Pac_Man extends JPanel implements ActionListener, KeyListener {
 
         //import images, and load them..
         wall=new ImageIcon(getClass().getResource("wall.png")).getImage();
-        blueGhostImage=new ImageIcon(getClass().getResource("blueGhost.png")).getImage();
-        RedGhostImage=new ImageIcon(getClass().getResource("RedGhost.png")).getImage();
-        OrangeGhostImage=new ImageIcon(getClass().getResource("OrangeGhost.png")).getImage();
-        pinkGhostImage=new ImageIcon(getClass().getResource("pinkGhost.png")).getImage();
+        vijayalakshmiImage=new ImageIcon(getClass().getResource("vijayalakshmiImage.png")).getImage();
+        renukaswamyImage=new ImageIcon(getClass().getResource("renukaswamyImage.png")).getImage();
+        pavithragowdaImage=new ImageIcon(getClass().getResource("pavithragowdaImage.png")).getImage();
+        RanganathImage=new ImageIcon(getClass().getResource("RanganathImage.png")).getImage();
 
-        pacmanLeftImage=new ImageIcon(getClass().getResource("pacmanLeft.png")).getImage();
-        pacmanRightImage=new ImageIcon(getClass().getResource("pacmanRight.png")).getImage();
-        pacmanUpImage=new ImageIcon(getClass().getResource("pacmanUp.png")).getImage();
-        pacmanDownImage=new ImageIcon(getClass().getResource("pacmanDown.png")).getImage();
+        DbossLeftImage=new ImageIcon(getClass().getResource("DbossLeftImage.png")).getImage();
+        DbossRightImage=new ImageIcon(getClass().getResource("DbossRightImage.png")).getImage();
+        DbossUpImage=new ImageIcon(getClass().getResource("DbossUpImage.png")).getImage();
+        DbossDownImage=new ImageIcon(getClass().getResource("DbossDownImage.png")).getImage();
         cherryImage=new ImageIcon(getClass().getResource("cherry.png")).getImage();
         cherry2Image=new ImageIcon(getClass().getResource("cherry2.png")).getImage();
         powerFoodImage=new ImageIcon(getClass().getResource("powerFood.png")).getImage();
@@ -163,28 +163,28 @@ public class Pac_Man extends JPanel implements ActionListener, KeyListener {
                     Block wallBlock=new Block(wall,x,y,tileSize,tileSize);
                     walls.add(wallBlock);
                 }
-                else if(tile=='o'){ // Orange Ghost
-                    Block orangeGhostBlock=new Block(OrangeGhostImage,x,y,tileSize,tileSize);
+                else if(tile=='p'){ // pavi-gowda Ghost
+                    Block orangeGhostBlock=new Block(pavithragowdaImage,x,y,tileSize,tileSize);
                     ghosts.add(orangeGhostBlock);
                 }
-                else if(tile=='r'){ // Red Ghost
-                    Block redGhostBlock=new Block(RedGhostImage,x,y,tileSize,tileSize);
+                else if(tile=='r'){ // renukaswamy Ghost
+                    Block redGhostBlock=new Block(renukaswamyImage,x,y,tileSize,tileSize);
                     ghosts.add(redGhostBlock);
                 }
-                else if(tile=='b'){ // Blue Ghost
-                    Block blueGhostBlock=new Block(blueGhostImage,x,y,tileSize,tileSize);
+                else if(tile=='v'){ // Viji-attige Ghost
+                    Block blueGhostBlock=new Block(vijayalakshmiImage,x,y,tileSize,tileSize);
                     ghosts.add(blueGhostBlock);
                 }
-                else if(tile=='p'){ // Pink Ghost
-                    Block pinkGhostBlock=new Block(pinkGhostImage,x,y,tileSize,tileSize);
+                else if(tile=='R'){ // Ranganna Ghost
+                    Block pinkGhostBlock=new Block(RanganathImage,x,y,tileSize,tileSize);
                     ghosts.add(pinkGhostBlock);
                 }
                 else if(tile==' '){ //Food
                     Block foodBlock=new Block(null, x+14, y+14, 4, 4);
                     food.add(foodBlock);
                 }
-                else if(tile=='P'){ // Pac man
-                    pacman=new Block(pacmanRightImage,x,y,tileSize,tileSize);
+                else if(tile=='D'){ // D-BOSS man
+                    pacman=new Block(DbossRightImage,x,y,tileSize,tileSize);
                 }
             }
         }
@@ -210,6 +210,7 @@ public class Pac_Man extends JPanel implements ActionListener, KeyListener {
         g.setFont(new Font("Arial", Font.BOLD, 18));
         if(gameOver){
             g.drawString("Game Over: " + String.valueOf(score), tileSize/2, tileSize/2);
+            g.drawString("!!!!!!!!!Halkat-Randi-Munde!!!!!!!", tileSize/2, tileSize);
         }
         else{
             g.drawString("x"+String.valueOf(lives)+" Score:  "+String.valueOf(score),tileSize/2,tileSize/2);
@@ -334,16 +335,16 @@ public class Pac_Man extends JPanel implements ActionListener, KeyListener {
 
         //updating the pacman images....
         if(pacman.direction=='U'){
-            pacman.image=pacmanUpImage;
+            pacman.image=DbossUpImage;
         }
         else if(pacman.direction=='D'){
-            pacman.image=pacmanDownImage;
+            pacman.image=DbossDownImage;
         }
         else if(pacman.direction=='L'){
-            pacman.image=pacmanLeftImage;
+            pacman.image=DbossLeftImage;
         }
         else if(pacman.direction=='R'){
-            pacman.image=pacmanRightImage;
+            pacman.image=DbossRightImage;
         }
     }
     //Approximation
