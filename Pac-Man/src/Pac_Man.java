@@ -77,7 +77,7 @@ public class Pac_Man extends JPanel implements ActionListener, KeyListener {
     char[] directions={'U','D','L','R'}; //direction for ghosts..
     Random random=new Random();
     int score=0;
-    int lives=3;
+    int lives=1;
     boolean gameOver=false;
 
     // Using 2-D array to store the map of the Base-layout...
@@ -210,7 +210,8 @@ public class Pac_Man extends JPanel implements ActionListener, KeyListener {
         g.setFont(new Font("Arial", Font.BOLD, 18));
         if(gameOver){
             g.drawString("Game Over: " + String.valueOf(score), tileSize/2, tileSize/2);
-            g.drawString("!!!!!!!!!Halkat-Randi-Munde!!!!!!!", tileSize/2, tileSize);
+            g.setFont(new Font("Arial", Font.BOLD, 96));
+            g.drawString("!Halkat-Randi-Munde!", tileSize/2, 9*tileSize);
         }
         else{
             g.drawString("x"+String.valueOf(lives)+" Score:  "+String.valueOf(score),tileSize/2,tileSize/2);
@@ -314,7 +315,7 @@ public class Pac_Man extends JPanel implements ActionListener, KeyListener {
         if(gameOver && e.getKeyCode()==KeyEvent.VK_ENTER){
             loadMap();
             resetPositions();
-            lives=3;
+            lives=1;
             score=0;
             gameOver=false;
             gameLoop.start();
