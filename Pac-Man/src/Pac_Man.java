@@ -352,5 +352,7 @@ public class Pac_Man extends JPanel implements ActionListener, KeyListener {
             int epsilon=5;
     //Level-Upgradation
             int level=1;
+            // lvl kuda madoona
+            
 
 }
