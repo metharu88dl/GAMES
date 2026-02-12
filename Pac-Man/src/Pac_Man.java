@@ -209,9 +209,14 @@ public class Pac_Man extends JPanel implements ActionListener, KeyListener {
         //score
         g.setFont(new Font("Arial", Font.BOLD, 18));
         if(gameOver){
-            g.drawString("Game Over: " + String.valueOf(score), tileSize/2, tileSize/2);
-            g.setFont(new Font("Arial", Font.BOLD, 96));
-            g.drawString("!Halkat-Randi-Munde!", tileSize/2, 9*tileSize);
+            g.setFont(new Font("Arial", Font.BOLD, 56));
+            g.setColor(Color.PINK);
+            g.drawString("Game Over: " + String.valueOf(score), tileSize, 6*tileSize);
+            g.setFont(new Font("Italics", Font.BOLD, 76));
+            g.setColor(Color.YELLOW);
+            g.drawString("Halkat   Randi", tileSize/2, 9*tileSize);
+            g.drawString("Munde", 5*tileSize, 12*tileSize);
+            
         }
         else{
             g.drawString("x"+String.valueOf(lives)+" Score:  "+String.valueOf(score),tileSize/2,tileSize/2);
